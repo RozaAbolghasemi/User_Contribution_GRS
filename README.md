@@ -1,1 +1,1 @@
-# Nithya_Roza_WLU_ShapleyLogDeterminant
+# Predicting user contribution in group recommendation and group decision
