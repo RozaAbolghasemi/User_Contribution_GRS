@@ -4,7 +4,7 @@ Python code for a project focusing on "Group Recommendation Systems (GRS)" and "
 User contributions play a critical role in influencing the dynamics and decision-making processes within a group. Each user brings unique insights, perspectives, and preferences, which collectively shape the group's choices. Considering the crucial importance of individual contributions, this project presents an innovative aggregation method for Group Recommendation Systems (GRS). We introduce two methods to measure the user's contributions in a group. The first method is based on Shapley values (ShV) and diversity between the group members, while the second one is based on Wonderful Life Utility (WLU) and similarity between the group members. These methods are validated across two datasets - food and car - which uses pairwise preference data. The experimental results demonstrate the system’s remarkable performance in recommending the right choice to the group. These methods were also tested with different grouping techniques, such as user clustering, to evaluate their performance. 
 The logical diagram illustrating the process of the proposed method is as follows:
 <p align="center">
-<img style="width: 80%;" src="https://github.com/RozaAbolghasemi/User_Contribution_GRS/blob/main/FlowChart.png">
+<img style="width: 70%;" src="https://github.com/RozaAbolghasemi/User_Contribution_GRS/blob/main/FlowChart.png">
 </p>
 ## Execution Dependencies
 The codes can be run directly.
