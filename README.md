@@ -6,6 +6,7 @@ The logical diagram illustrating the process of the proposed method is as follow
 <p align="center">
 <img style="width: 60%;" src="https://github.com/RozaAbolghasemi/User_Contribution_GRS/blob/main/FlowChart.png">
 </p>
+
 ## Execution Dependencies
 The codes can be run directly.
 Also, the python code can be run by: 
