@@ -18,16 +18,30 @@ def CoalitionValue_Diversity(F, item_scores, p):
     
     similarity_matrix = cosine_similarity(item_scores_array)
     
-    X = list(F)  # Convert set to list for indexing
-    i = p - 1  # Adjusting user ID to index (0-based index)
+    X = F 
+    i = p   
+    Xi = F + [p]
+
     
-    L_X = similarity_matrix[X][:, X]
-    L_X_inv = np.linalg.inv(L_X)
+    L_X = similarity_matrix[X][:, X]  
+    L_Xi = similarity_matrix[Xi][:, Xi]
     
+    L_X_inv = np.linalg.inv(L_X)    
     L_i_X = similarity_matrix[i, X]
     L_i_i = similarity_matrix[i, i]
+    L_X_i = similarity_matrix[X, i] 
+
+
+    ########### TWO ways to calculate diversity score: ################
+    epsilon = 1e-100  # Small positive value to avoid taking log of non-positive values
+    print("****", L_i_i - np.dot(L_i_X, np.dot(L_X_inv, L_X_i)), L_i_i - np.dot(L_i_X, np.dot(L_X_inv, L_i_X)))
+    diversity1 = np.log(L_i_i - np.dot(L_i_X, np.dot(L_X_inv, L_X_i)))
+    diversity = np.log(max(L_i_i - np.dot(L_i_X, np.dot(L_X_inv, L_i_X)), epsilon))
     
-    diversity = np.log(L_i_i - np.dot(L_i_X, np.dot(L_X_inv, L_i_X)))
+    # Calculate diversity as log det L_{X ∪ i} - log det L_{X}
+    diversity2 = np.log(np.linalg.det(np.add(L_X, np.outer(L_i_X, L_i_X)))) - np.log(np.linalg.det(L_X))
     
-    return CoalitionValue
+
+    #CoalitionValue = 1- diversity2
+    return diversity2
     
