@@ -74,38 +74,29 @@ def FoodData_preprocessing():
     User_num = 20
     Item_num = 6
     ComparisonMatrix = np.zeros((User_num, Item_num, Item_num))
-    ComparisonMatrix[0][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.1/direct/adrian1.csv", index_col=0).to_numpy()
-    ComparisonMatrix[1][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.1/direct/anis1.csv", index_col=0).to_numpy()
-    ComparisonMatrix[2][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.1/direct/kristian1.csv",
-                                            index_col=0).to_numpy()
-    ComparisonMatrix[3][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.1/direct/pedro1.csv", index_col=0).to_numpy()
-    ComparisonMatrix[4][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.1/direct/random1.csv", index_col=0).to_numpy()
+    ComparisonMatrix[0][:][:] = pd.read_csv("./FoodData/User1.csv", index_col=0).to_numpy()
+    ComparisonMatrix[1][:][:] = pd.read_csv("./FoodData/User2.csv", index_col=0).to_numpy()
+    ComparisonMatrix[2][:][:] = pd.read_csv("./FoodData/User3.csv",index_col=0).to_numpy()
+    ComparisonMatrix[3][:][:] = pd.read_csv("./FoodData/User4.csv", index_col=0).to_numpy()
+    ComparisonMatrix[4][:][:] = pd.read_csv("./FoodData/User5.csv", index_col=0).to_numpy()
 
-    ComparisonMatrix[5][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.1/indirect/adrian2.csv",
-                                            index_col=0).to_numpy()
-    ComparisonMatrix[6][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.1/indirect/anis2.csv", index_col=0).to_numpy()
-    ComparisonMatrix[7][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.1/indirect/kristian2.csv",
-                                            index_col=0).to_numpy()
-    ComparisonMatrix[8][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.1/indirect/pedro2.csv", index_col=0).to_numpy()
-    ComparisonMatrix[9][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.1/indirect/random2.csv",
-                                            index_col=0).to_numpy()
+    ComparisonMatrix[5][:][:] = pd.read_csv("./FoodData/User6.csv", index_col=0).to_numpy()
+    ComparisonMatrix[6][:][:] = pd.read_csv("./FoodData/User7.csv", index_col=0).to_numpy()
+    ComparisonMatrix[7][:][:] = pd.read_csv("./FoodData/User8.csv",index_col=0).to_numpy()
+    ComparisonMatrix[8][:][:] = pd.read_csv("./FoodData/User9.csv", index_col=0).to_numpy()
+    ComparisonMatrix[9][:][:] = pd.read_csv("./FoodData/User10.csv", index_col=0).to_numpy()
 
-    ComparisonMatrix[10][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.2/direct/adrian1.csv", index_col=0).to_numpy()
-    ComparisonMatrix[11][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.2/direct/anis1.csv", index_col=0).to_numpy()
-    ComparisonMatrix[12][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.2/direct/kristian1.csv",
-                                             index_col=0).to_numpy()
-    ComparisonMatrix[13][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.2/direct/pedro1.csv", index_col=0).to_numpy()
-    ComparisonMatrix[14][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.2/direct/random1.csv", index_col=0).to_numpy()
+    ComparisonMatrix[10][:][:] = pd.read_csv("./FoodData/User11.csv", index_col=0).to_numpy()
+    ComparisonMatrix[11][:][:] = pd.read_csv("./FoodData/User12.csv", index_col=0).to_numpy()
+    ComparisonMatrix[12][:][:] = pd.read_csv("./FoodData/User13.csv",index_col=0).to_numpy()
+    ComparisonMatrix[13][:][:] = pd.read_csv("./FoodData/User14.csv", index_col=0).to_numpy()
+    ComparisonMatrix[14][:][:] = pd.read_csv("./FoodData/User15.csv", index_col=0).to_numpy()
 
-    ComparisonMatrix[15][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.2/indirect/adrian2.csv",
-                                             index_col=0).to_numpy()
-    ComparisonMatrix[16][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.2/indirect/anis2.csv", index_col=0).to_numpy()
-    ComparisonMatrix[17][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.2/indirect/kristian2.csv",
-                                             index_col=0).to_numpy()
-    ComparisonMatrix[18][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.2/indirect/pedro2.csv",
-                                             index_col=0).to_numpy()
-    ComparisonMatrix[19][:][:] = pd.read_csv("./Data/Data_Pedro/2021101309.2/indirect/random2.csv",
-                                             index_col=0).to_numpy()
+    ComparisonMatrix[15][:][:] = pd.read_csv("./FoodData/User16.csv",index_col=0).to_numpy()
+    ComparisonMatrix[16][:][:] = pd.read_csv("./FoodData/User17.csv", index_col=0).to_numpy()
+    ComparisonMatrix[17][:][:] = pd.read_csv("./FoodData/User.csv",index_col=0).to_numpy()
+    ComparisonMatrix[18][:][:] = pd.read_csv("./FoodData/User18.csv",index_col=0).to_numpy()
+    ComparisonMatrix[19][:][:] = pd.read_csv("./FoodData/User19.csv", index_col=0).to_numpy()
 
     filename = "./Data/Data_Pedro/PairwiseRates_Food.csv"
     with open(filename, "w", newline="") as csvfile:
