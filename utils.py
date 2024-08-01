@@ -98,7 +98,7 @@ def FoodData_preprocessing():
     ComparisonMatrix[18][:][:] = pd.read_csv("./FoodData/User18.csv",index_col=0).to_numpy()
     ComparisonMatrix[19][:][:] = pd.read_csv("./FoodData/User19.csv", index_col=0).to_numpy()
 
-    filename = "./Data/Data_Pedro/PairwiseRates_Food.csv"
+    filename = "./PairwiseRates_Food.csv"
     with open(filename, "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
         header = ["User_ID", "Item1_ID", "Item2_ID", "PairwiseScore"]
@@ -110,7 +110,7 @@ def FoodData_preprocessing():
                     List = [user + 1, item1 + 1, item2 + 1, ComparisonMatrix[user][item1][item2]]
                     writer.writerow(List)
 
-    PairwiseRates = pd.read_csv("./Data/Data_Pedro/PairwiseRates_Food.csv")  # .to_numpy()
+    PairwiseRates = pd.read_csv("./PairwiseRates_Food.csv")  # .to_numpy()
     # Item_pairs is a list containing paired items
     ii, iii = PairwiseRates.shape
     Item_pairs = []
@@ -169,8 +169,8 @@ def mf(R, k, n_epoch=5000, lr=.0003, l2=.04):  # n_epoch=5000, lr=.0003
             break
 
         # Saving the embeddings:
-        pd.DataFrame(P).to_csv('./Data/Data_Pedro/User_Embedding.csv', header=True, index=True)
-        pd.DataFrame(Q).to_csv('./Data/Data_Pedro/PairItems_Embedding.csv', header=True, index=True)
+        pd.DataFrame(P).to_csv('./User_Embedding.csv', header=True, index=True)
+        pd.DataFrame(Q).to_csv('./PairItems_Embedding.csv', header=True, index=True)
     return P, Q
 
 
